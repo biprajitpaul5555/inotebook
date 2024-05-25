@@ -12,7 +12,7 @@ export default function About() {
     return (
         <div>
             {/* Hi, I am {nc.state.name} and I study in {nc.state.sem}th semester */}
-            About
+            This is about page
         </div>
     );
 }
