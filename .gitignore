@@ -1,9 +1,0 @@
-node_modules
-
-/inotebook-backend/node_modules
-/inotebook-backend/.vscode
-/inotebook-backend/.env
-
-/inotebook-frontend/node_modules
-/inotebook-frontend/.vscode
-/inotebook-frontend/.env
