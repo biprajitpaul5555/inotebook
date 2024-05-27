@@ -7,10 +7,7 @@ import cors from "cors";
 
 const app = express();
 const port = process.env.PORT || 5000;
-let whitelist = ["http://localhost:3000","http://localhost:5173", "http://127.0.0.1:5500"];
-if (process.env.NODE_ENV === 'production') {
-    whitelist.push(process.env.FRONTEND_URL);
-}
+const whitelist = ["http://localhost:5173", "http://localhost:3000", "http://127.0.0.1:5500", process.env.FRONTEND_URL];
 const corsOptions = {
     origin: function (origin, callback) {
         if (whitelist.indexOf(origin) !== -1 || !origin || origin === "null") {
@@ -20,11 +17,11 @@ const corsOptions = {
         }
     },
     methods: ['GET','POST','PUT','DELETE'],
-    credentials: true,
+    credentials: true
 };
 
 connectToMongo();
-app.options(cors(corsOptions));
+app.options('*', cors())
 app.use(cors(corsOptions));
 app.use(express.json());
 
