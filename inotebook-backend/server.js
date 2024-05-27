@@ -24,6 +24,7 @@ const corsOptions = {
 };
 
 connectToMongo();
+app.options(cors(corsOptions));
 app.use(cors(corsOptions));
 app.use(express.json());
 
